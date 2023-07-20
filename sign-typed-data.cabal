@@ -1,0 +1,122 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.2.
+--
+-- see: https://github.com/sol/hpack
+
+name:           sign-typed-data
+version:        0.1.0.0
+synopsis:       Implements EIP-712: Typed structured data hashing and signing
+description:    Please see the README on GitHub at <https://github.com/fullstack-development/sign-typed-data#readme>
+category:       Blockchain
+homepage:       https://github.com/fullstack-development/sign-typed-data#readme
+bug-reports:    https://github.com/fullstack-development/sign-typed-data/issues
+author:         Evgeny Osipenko
+maintainer:     evgeny.osipenko@metalamp.io
+copyright:      Metalamp, 2023
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/fullstack-development/sign-typed-data
+
+library
+  exposed-modules:
+      Data.SignTyped.Class
+      Data.SignTyped.Crypto
+      Data.SignTyped.EIP712Domain
+      Data.SignTyped.Hashing
+      Data.SignTyped.Json
+      Data.SignTyped.Message
+      Data.SignTyped.Structure
+      Data.SignTyped.Type.HList
+      Data.SignTyped.Type.HMap
+      Data.SignTyped.Type.SCMaybe
+      Data.SignTyped.Type.SName
+      Data.SignTyped.Type.Some
+      Data.SignTyped.Type.TestOrdering
+      Data.SignTyped.Util
+  other-modules:
+      Paths_sign_typed_data
+  hs-source-dirs:
+      src
+  default-extensions:
+      AllowAmbiguousTypes
+      DataKinds
+      DeriveAnyClass
+      DerivingVia
+      FunctionalDependencies
+      LambdaCase
+      OverloadedStrings
+      PatternSynonyms
+      QuantifiedConstraints
+      StandaloneDeriving
+      TypeFamilies
+      UndecidableInstances
+      ViewPatterns
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      aeson
+    , attoparsec
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , cryptonite
+    , memory
+    , scientific
+    , secp256k1-haskell
+    , secp256k1-haskell-recovery
+    , template-haskell
+    , text
+    , vector
+  default-language: GHC2021
+
+test-suite sign-typed-data-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Data.SignTyped.ClassSpec
+      Data.SignTyped.HashingSpec
+      Data.SignTyped.JsonSpec
+      Data.SignTyped.MessageSpec
+      Data.SignTyped.StructureSpec
+      Data.SignTyped.Test.NormalizeJson
+      Data.SignTyped.Test.Structs
+      Data.SignTyped.UtilSpec
+      Paths_sign_typed_data
+  hs-source-dirs:
+      test
+  default-extensions:
+      AllowAmbiguousTypes
+      DataKinds
+      DeriveAnyClass
+      DerivingVia
+      FunctionalDependencies
+      LambdaCase
+      OverloadedStrings
+      PatternSynonyms
+      QuantifiedConstraints
+      StandaloneDeriving
+      TypeFamilies
+      UndecidableInstances
+      ViewPatterns
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , attoparsec
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , cryptonite
+    , hspec
+    , memory
+    , scientific
+    , secp256k1-haskell
+    , secp256k1-haskell-recovery
+    , sign-typed-data
+    , template-haskell
+    , text
+    , vector
+  default-language: GHC2021

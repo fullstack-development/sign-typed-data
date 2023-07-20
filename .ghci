@@ -1,0 +1,4 @@
+:set -fdefer-typed-holes
+:set -Wno-missing-home-modules
+:set -package hspec -package QuickCheck
+:set -itest

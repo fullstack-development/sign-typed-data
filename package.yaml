@@ -1,0 +1,67 @@
+name:                sign-typed-data
+version:             0.1.0.0
+github:              "fullstack-development/sign-typed-data"
+license:             BSD3
+author:              "Evgeny Osipenko"
+maintainer:          "evgeny.osipenko@metalamp.io"
+copyright:           "Metalamp, 2023"
+synopsis:            "Implements EIP-712: Typed structured data hashing and signing"
+category:            Blockchain
+description:         Please see the README on GitHub at <https://github.com/fullstack-development/sign-typed-data#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- aeson
+- attoparsec
+- bytestring
+- containers
+- cryptonite
+- memory
+- secp256k1-haskell
+- secp256k1-haskell-recovery
+- scientific
+- template-haskell
+- text
+- vector
+
+language: GHC2021
+
+default-extensions:
+- AllowAmbiguousTypes
+- DataKinds
+- DeriveAnyClass
+- DerivingVia
+- FunctionalDependencies
+- LambdaCase
+- OverloadedStrings
+- PatternSynonyms
+- QuantifiedConstraints
+- StandaloneDeriving
+- TypeFamilies
+- UndecidableInstances
+- ViewPatterns
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+tests:
+  sign-typed-data-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - sign-typed-data
+    - hspec
